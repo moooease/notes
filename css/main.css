@@ -37,6 +37,7 @@ body [contenteditable]:focus {
 
 .content {
   color: azure;
+  padding-left: 5px;
   min-height: 300px;
 }
 

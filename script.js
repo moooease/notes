@@ -2,9 +2,10 @@
 
 const editorContent = document.querySelector('.content')
 editorContent.innerHTML = localStorage['content']
+const defaultContent = '...'
 
 let save = () => {
-  localStorage['content'] = editorContent.innerHTML
+  localStorage['content'] = editorContent.innerHTML || defaultContent
 }
 
 editorContent.onkeyup = () => save()

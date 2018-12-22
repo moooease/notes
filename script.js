@@ -21,13 +21,14 @@ function formatAMPM() {
   var d = new Date(),
     minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
     hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
+    hours = (hours > 12)? hours -12 : hours,
     ampm = d.getHours() >= 12 ? 'pm' : 'am',
     days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
 str += 'Its '+hours+':'+minutes+ampm +' on a '+ days[d.getDay()]+'.';
 document.getElementById("date").innerHTML = str;
 }
 
-setInterval(formatAMPM, 1000);
+setInterval(formatAMPM, 500);
 
 var input = document.getElementById('myTextInput');
 input.focus();

@@ -2,7 +2,7 @@
 
 const editorContent = document.querySelector('.content')
 editorContent.innerHTML = localStorage['content']
-const defaultContent = '...'
+const defaultContent = '  '
 
 let save = () => {
   localStorage['content'] = editorContent.innerHTML || defaultContent
